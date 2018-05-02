@@ -67,9 +67,9 @@ def organize_schools(shools)
   organized_schools.each do |k,v|
     v.flatten!
     v.each do |element|
-      if element.is_a?(Hash)
-        v.delete(element)
-      end 
+      
+        v.delete(element) if element.is_a?(Hash)
+      #end 
     end
   end 
 end
