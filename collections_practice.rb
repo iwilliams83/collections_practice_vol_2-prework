@@ -66,7 +66,10 @@ def organize_schools(shools)
   organized_schools = schools.group_by {|k,v| v[:location]}
   organized_schools.each do |k,v|
     v.flatten!
-    v = v.uniq
+    v = v.uniq!
   end 
 end
 
+
+expected: {"NYC"=>["flatiron school bk", "flatiron school", "general assembly"], "SF"=>["dev boot camp", "Hack Reactor"], "Chicago"=>["dev boot camp chicago"]}
+got: {"NYC"=>["flatiron school bk", {:location=>"NYC"}, "flatiron school", {:location=>"NYC"}, "general as...}, "Hack Reactor", {:location=>"SF"}], "Chicago"=>["dev boot camp chicago", {:location=>"Chicago"}]}
