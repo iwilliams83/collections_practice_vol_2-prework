@@ -64,5 +64,6 @@ end
 
 def organize_schools(shools)
   organized_schools = schools.group_by {|k,v| v[:location]}
+  organized_schools.values.flatten.uniq
 end
 
