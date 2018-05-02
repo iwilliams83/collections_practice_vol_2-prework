@@ -66,9 +66,7 @@ def organize_schools(shools)
   organized_schools = schools.group_by {|k,v| v[:location]}
   organized_schools.each do |k,v|
     v.flatten!
-    if v.is_a?(Hash)
-      v.remove 
-    end
+    
   end 
 end
 
